@@ -17,7 +17,9 @@ async function scrapeWWIShareByName(targetName) {
 
     try {
         browser = await puppeteer.launch({ 
-            headless: 'new'
+            headless: 'new',
+            // FIX: Added the necessary arguments for Render
+            args: ['--no-sandbox', '--disable-setuid-sandbox'] 
         });
         const page = await browser.newPage();
         
