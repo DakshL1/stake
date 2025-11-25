@@ -3,7 +3,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const port = 3000;
+const port = process.env.PORT;
 
 app.use(cors({
   origin: 'http://localhost:5173',

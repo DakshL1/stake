@@ -17,11 +17,13 @@ const LandingPage = () => {
   // mobile menu state
   const [mobileOpen, setMobileOpen] = useState(false)
 
+  const backend_url = import.meta.env.VITE_BACKEND_URL;
+
   useEffect(() => {
     const fetchPriceOptions = async () => {
       try {
         setLoading(true)
-        const response = await fetch('http://localhost:3000/api/NSE%20India')
+        const response = await fetch(`${backend_url}/api/NSE%20India`)
         
         if (!response.ok) {
           throw new Error(`API error: ${response.status}`)
